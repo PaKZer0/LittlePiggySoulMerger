@@ -18,7 +18,7 @@ public class Instrument {
 	private long	end;
 	private int		table;
 	private boolean	automation;
-	
+	  
 	public int getId() {
 		return id;
 	}
