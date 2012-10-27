@@ -1,16 +1,6 @@
 package net.hexawe.merger.model.beans;
 
 public class ParamData extends A_Data {
-
-	private byte number;
-
-	public byte getNumber() {
-		return number;
-	}
-
-	public void setNumber(byte number) {
-		this.number = number;
-	}
 	
 	@Override
 	public String toString() {
