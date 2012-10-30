@@ -1,8 +1,9 @@
 package net.hexawe.merger.model.beans;
 
-public abstract class A_Data {
+public class Data {
 	private int value;
 	private int length;
+	private int[] content;
 	
 	public int getValue() {
 		return value;
@@ -20,5 +21,12 @@ public abstract class A_Data {
 		this.length = length;
 	}
 	
-	public abstract String toString();
+	public int[] getContent() {
+		return content;
+	}
+
+	public void setContent(int[] content) {
+		this.content = content;
+	}
+	//public abstract XStream tweakXStream(XStream xstream);
 }

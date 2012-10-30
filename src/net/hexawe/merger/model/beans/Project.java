@@ -1,12 +1,14 @@
 package net.hexawe.merger.model.beans;
 
+import com.thoughtworks.xstream.XStream;
+
 public class Project {
 	private String version;
 	
-	private int tempo;
-	private int master;
-	private String wrap;
-	private String midi;
+	private Parameter tempo;
+	private Parameter master;
+	private Parameter wrap;
+	private Parameter midi;
 	
 	public String getVersion() {
 		return version;
@@ -14,28 +16,36 @@ public class Project {
 	public void setVersion(String version) {
 		this.version = version;
 	}
-	public int getTempo() {
+	public Parameter getTempo() {
 		return tempo;
 	}
-	public void setTempo(int tempo) {
+	public void setTempo(Parameter tempo) {
 		this.tempo = tempo;
 	}
-	public int getMaster() {
+	public Parameter getMaster() {
 		return master;
 	}
-	public void setMaster(int master) {
+	public void setMaster(Parameter master) {
 		this.master = master;
 	}
-	public String getWrap() {
+	public Parameter getWrap() {
 		return wrap;
 	}
-	public void setWrap(String wrap) {
+	public void setWrap(Parameter wrap) {
 		this.wrap = wrap;
 	}
-	public String getMidi() {
+	public Parameter getMidi() {
 		return midi;
 	}
-	public void setMidi(String midi) {
+	public void setMidi(Parameter midi) {
 		this.midi = midi;
+	}
+	
+	public XStream tweakXStream(XStream xstream){
+		xstream.aliasField("VERSION", Project.class, "version");
+		xstream.alias("PARAMETER", Parameter.class);
+		xstream.aliasField("NAME", Parameter.class, "name");
+		xstream.aliasField("VALUE", Parameter.class, "value");
+		return xstream;
 	}
 }

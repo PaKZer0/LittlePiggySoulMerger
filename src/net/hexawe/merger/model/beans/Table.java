@@ -5,52 +5,52 @@ import java.util.List;
 public class Table {
 	private int id;
 	
-	private List<CommandData> COM1;
-	private List<ParamData> PARAM1;
-	private List<CommandData> COM2;
-	private List<ParamData> PARAM2;
-	private List<CommandData> COM3;
-	private List<ParamData> PARAM3;
+	private List<Data> COM1;
+	private List<Data> PARAM1;
+	private List<Data> COM2;
+	private List<Data> PARAM2;
+	private List<Data> COM3;
+	private List<Data> PARAM3;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public List<CommandData> getCOM1() {
+	public List<Data> getCOM1() {
 		return COM1;
 	}
-	public void setCOM1(List<CommandData> cOM1) {
+	public void setCOM1(List<Data> cOM1) {
 		COM1 = cOM1;
 	}
-	public List<ParamData> getPARAM1() {
+	public List<Data> getPARAM1() {
 		return PARAM1;
 	}
-	public void setPARAM1(List<ParamData> pARAM1) {
+	public void setPARAM1(List<Data> pARAM1) {
 		PARAM1 = pARAM1;
 	}
-	public List<CommandData> getCOM2() {
+	public List<Data> getCOM2() {
 		return COM2;
 	}
-	public void setCOM2(List<CommandData> cOM2) {
+	public void setCOM2(List<Data> cOM2) {
 		COM2 = cOM2;
 	}
-	public List<ParamData> getPARAM2() {
+	public List<Data> getPARAM2() {
 		return PARAM2;
 	}
-	public void setPARAM2(List<ParamData> pARAM2) {
+	public void setPARAM2(List<Data> pARAM2) {
 		PARAM2 = pARAM2;
 	}
-	public List<CommandData> getCOM3() {
+	public List<Data> getCOM3() {
 		return COM3;
 	}
-	public void setCOM3(List<CommandData> cOM3) {
+	public void setCOM3(List<Data> cOM3) {
 		COM3 = cOM3;
 	}
-	public List<ParamData> getPARAM3() {
+	public List<Data> getPARAM3() {
 		return PARAM3;
 	}
-	public void setPARAM3(List<ParamData> pARAM3) {
+	public void setPARAM3(List<Data> pARAM3) {
 		PARAM3 = pARAM3;
 	}
 	
