@@ -2,8 +2,10 @@ package net.hexawe.merger.model.beans;
 
 import java.util.List;
 
+import com.thoughtworks.xstream.XStream;
+
 public class Table {
-	private int id;
+	private String id;
 	
 	private List<Data> COM1;
 	private List<Data> PARAM1;
@@ -11,10 +13,17 @@ public class Table {
 	private List<Data> PARAM2;
 	private List<Data> COM3;
 	private List<Data> PARAM3;
-	public int getId() {
+	
+	public XStream setXStream(XStream xstream){
+		xstream.alias("TABLE", Table.class);
+		xstream.aliasField("ID",Project.class, "id");
+		return xstream;
+	}
+	
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public List<Data> getCOM1() {
@@ -53,5 +62,4 @@ public class Table {
 	public void setPARAM3(List<Data> pARAM3) {
 		PARAM3 = pARAM3;
 	}
-	
 }
