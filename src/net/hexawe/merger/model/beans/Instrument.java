@@ -1,23 +1,25 @@
 package net.hexawe.merger.model.beans;
 
+import com.thoughtworks.xstream.XStream;
+
 public class Instrument {
 	private int id;
 	
-	private String	sample;
-	private int		volume;
-	private String	interpol;
-	private int		crush;
-	private int		crushDrive;
-	private int		rootNote;
-	private int		pan;
-	private int		filterCut;
-	private int		filterRes;
-	private long	start;
-	private String	loopMode;
-	private long	loopStart;
-	private long	end;
-	private int		table;
-	private boolean	automation;
+	private Parameter sample;
+	private Parameter volume;
+	private Parameter interpol;
+	private Parameter crush;
+	private Parameter crushDrive;
+	private Parameter rootNote;
+	private Parameter pan;
+	private Parameter filterCut;
+	private Parameter filterRes;
+	private Parameter start;
+	private Parameter loopMode;
+	private Parameter loopStart;
+	private Parameter end;
+	private Parameter table;
+	private Parameter automation;
 	  
 	public int getId() {
 		return id;
@@ -25,94 +27,103 @@ public class Instrument {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getSample() {
+	public Parameter getSample() {
 		return sample;
 	}
-	public void setSample(String sample) {
+	public void setSample(Parameter sample) {
 		this.sample = sample;
 	}
-	public int getVolume() {
+	public Parameter getVolume() {
 		return volume;
 	}
-	public void setVolume(int volume) {
+	public void setVolume(Parameter volume) {
 		this.volume = volume;
 	}
-	public String getInterpol() {
+	public Parameter getInterpol() {
 		return interpol;
 	}
-	public void setInterpol(String interpol) {
+	public void setInterpol(Parameter interpol) {
 		this.interpol = interpol;
 	}
-	public int getCrush() {
+	public Parameter getCrush() {
 		return crush;
 	}
-	public void setCrush(int crush) {
+	public void setCrush(Parameter crush) {
 		this.crush = crush;
 	}
-	public int getCrushDrive() {
+	public Parameter getCrushDrive() {
 		return crushDrive;
 	}
-	public void setCrushDrive(int crushDrive) {
+	public void setCrushDrive(Parameter crushDrive) {
 		this.crushDrive = crushDrive;
 	}
-	public int getRootNote() {
+	public Parameter getRootNote() {
 		return rootNote;
 	}
-	public void setRootNote(int rootNote) {
+	public void setRootNote(Parameter rootNote) {
 		this.rootNote = rootNote;
 	}
-	public int getPan() {
+	public Parameter getPan() {
 		return pan;
 	}
-	public void setPan(int pan) {
+	public void setPan(Parameter pan) {
 		this.pan = pan;
 	}
-	public int getFilterCut() {
+	public Parameter getFilterCut() {
 		return filterCut;
 	}
-	public void setFilterCut(int filterCut) {
+	public void setFilterCut(Parameter filterCut) {
 		this.filterCut = filterCut;
 	}
-	public int getFilterRes() {
+	public Parameter getFilterRes() {
 		return filterRes;
 	}
-	public void setFilterRes(int filterRes) {
+	public void setFilterRes(Parameter filterRes) {
 		this.filterRes = filterRes;
 	}
-	public long getStart() {
+	public Parameter getStart() {
 		return start;
 	}
-	public void setStart(long start) {
+	public void setStart(Parameter start) {
 		this.start = start;
 	}
-	public String getLoopMode() {
+	public Parameter getLoopMode() {
 		return loopMode;
 	}
-	public void setLoopMode(String loopMode) {
+	public void setLoopMode(Parameter loopMode) {
 		this.loopMode = loopMode;
 	}
-	public long getLoopStart() {
+	public Parameter getLoopStart() {
 		return loopStart;
 	}
-	public void setLoopStart(long loopStart) {
+	public void setLoopStart(Parameter loopStart) {
 		this.loopStart = loopStart;
 	}
-	public long getEnd() {
+	public Parameter getEnd() {
 		return end;
 	}
-	public void setEnd(long end) {
+	public void setEnd(Parameter end) {
 		this.end = end;
 	}
-	public int getTable() {
+	public Parameter getTable() {
 		return table;
 	}
-	public void setTable(int table) {
+	public void setTable(Parameter table) {
 		this.table = table;
 	}
-	public boolean isAutomation() {
+	public Parameter isAutomation() {
 		return automation;
 	}
-	public void setAutomation(boolean automation) {
+	public void setAutomation(Parameter automation) {
 		this.automation = automation;
-	}	
+	}
+	
+	public XStream setXStream(XStream xstream){
+		xstream.alias("INSTRUMENT", Instrument.class);
+		xstream.aliasField("ID", Project.class, "id");
+		xstream.alias("PARAM", Parameter.class);
+		xstream.aliasField("NAME", Parameter.class, "name");
+		xstream.aliasField("VALUE", Parameter.class, "value");
+		return xstream;
+	}
 }

@@ -66,5 +66,4 @@ public class DataConverter implements Converter{
 		
 		return data;
 	}
-
 }

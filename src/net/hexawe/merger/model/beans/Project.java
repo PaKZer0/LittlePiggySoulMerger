@@ -41,7 +41,8 @@ public class Project {
 		this.midi = midi;
 	}
 	
-	public XStream tweakXStream(XStream xstream){
+	public XStream setXStream(XStream xstream){
+		xstream.alias("PROJECT", Project.class);
 		xstream.aliasField("VERSION", Project.class, "version");
 		xstream.alias("PARAMETER", Parameter.class);
 		xstream.aliasField("NAME", Parameter.class, "name");
